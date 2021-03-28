@@ -1,9 +1,9 @@
 //This is a big game so if it's hangs in your machine then try uncommenting the 1st, 2nd and 3rd line to change the gameState.
 //Thank You!!
 
-//var gameState = "Intro", workState = "Entry", dialogue = "0";
+var gameState = "Intro", workState = "Entry", dialogue = "0";
 //var gameState = "Mission", workState = "Basement1", dialogue = "20";
-var gameState = "Mission", workState = "Basement5", dialogue = "23";
+//var gameState = "Mission", workState = "Basement5", dialogue = "23";
 
 var health=15, armyHealthBar, Thealth = 20, THealthBar;
 var fade = 400;
@@ -12,193 +12,193 @@ var timerValue = 500,instruction;
 
 function preload(){
 
-    bgImage1 = loadAnimation("Images/Map/URI.png");
-    bgImage2 = loadAnimation("Images/Map/Fortuna1.png");
-    meeting1 = loadImage("Images/Meeting/meeting1.png");
-    helicopterGif = loadImage("Images/vehicle/helicopter.gif");
+    bgImage1 = loadAnimation("URI.png");
+    bgImage2 = loadAnimation("Fortuna1.png");
+    meeting1 = loadImage("meeting1.png");
+    helicopterGif = loadImage("helicopter.gif");
 
-    bombA = loadAnimation("Images/Weapons/bomb/bomb.png");
-    armyDeadA = loadAnimation("Images/Character/armydead1.png","Images/Character/armydead2.png","Images/Character/armydead3.png","Images/Character/armydead4.png",
-    "Images/Character/armydead5.png","Images/Character/armydead6.png","Images/Character/armydead7.png","Images/Character/armydead8.png");
-    flamebA = loadAnimation("Images/Flame/flameb1.png","Images/Flame/flameb2.png","Images/Flame/flameb3.png","Images/Flame/flameb4.png","Images/Flame/flameb5.png",
-    "Images/Flame/flameb6.png","Images/Flame/flameb7.png");
+    bombA = loadAnimation("bomb.png");
+    armyDeadA = loadAnimation("armydead1.png","armydead2.png","armydead3.png","armydead4.png",
+    "armydead5.png","armydead6.png","armydead7.png","armydead8.png");
+    flamebA = loadAnimation("flameb1.png","flameb2.png","flameb3.png","flameb4.png","flameb5.png",
+    "flameb6.png","flameb7.png");
 
-    ropeImage = loadAnimation("Images/Basement/rope_35x534.jpg");
+    ropeImage = loadAnimation("rope_35x534.jpg");
 
-    armyLeft = loadAnimation("Images/Character/ab1.jpg","Images/Character/ab2.jpg",
-    "Images/Character/ab4.jpg","Images/Character/ab5.jpg","Images/Character/ab6.jpg");
-    armyRight = loadAnimation("Images/Character/af1.jpg","Images/Character/af2.jpg",
-    "Images/Character/af4.jpg","Images/Character/af5.jpg","Images/Character/af6.jpg");
-    armyLeftStill = loadAnimation("Images/Character/als.jpg");
-    armyRightStill = loadAnimation("Images/Character/ars.jpg");
-    armyShootR = loadAnimation("Images/Character/afg1.png","Images/Character/afg2.png");
-    armyShootL = loadAnimation("Images/Character/abg1.png","Images/Character/abg2.png");
-    armyRopeImage = loadAnimation("Images/Character/ars.jpg");
+    armyLeft = loadAnimation("ab1.jpg","ab2.jpg",
+    "ab4.jpg","ab5.jpg","ab6.jpg");
+    armyRight = loadAnimation("af1.jpg","af2.jpg",
+    "af4.jpg","af5.jpg","af6.jpg");
+    armyLeftStill = loadAnimation("als.jpg");
+    armyRightStill = loadAnimation("ars.jpg");
+    armyShootR = loadAnimation("afg1.png","afg2.png");
+    armyShootL = loadAnimation("abg1.png","abg2.png");
+    armyRopeImage = loadAnimation("ars.jpg");
 
-    patrolImage1 = loadAnimation("Images/Character/patrol2.png");
-    patrolImage2 = loadAnimation("Images/Character/patrol3.png");
+    patrolImage1 = loadAnimation("patrol2.png");
+    patrolImage2 = loadAnimation("patrol3.png");
 
-    HTImage = loadAnimation("Images/Character/HT.png");
-    TImage = loadAnimation("Images/Character/T1.png","Images/Character/T2.png","Images/Character/T3.png","Images/Character/T4.png",
-    "Images/Character/T5.png","Images/Character/T6.png","Images/Character/T7.png","Images/Character/T8.png")
-    TLImage = loadAnimation("Images/Character/TL.png");
-    TRImage = loadAnimation("Images/Character/TR.png")
+    HTImage = loadAnimation("HT.png");
+    TImage = loadAnimation("T1.png","T2.png","T3.png","T4.png",
+    "T5.png","T6.png","T7.png","T8.png")
+    TLImage = loadAnimation("TL.png");
+    TRImage = loadAnimation("TR.png")
 
-    helipadImage = loadImage("Images/vehicle/background.png");
-    helicopterImage = loadImage("Images/vehicle/helicopter.gif");
-    helicopterWithLight = loadAnimation("Images/vehicle/Fly1.png","Images/vehicle/Fly2.png","Images/vehicle/Fly3.png","Images/vehicle/Fly4.png");
-    helicopterWithNoLight = loadAnimation("Images/vehicle/Fly5.png","Images/vehicle/Fly6.png","Images/vehicle/Fly7.png","Images/vehicle/Fly8.png");
-    helicopterStill = loadAnimation("Images/vehicle/Fly1.png");
-    helicopterShoot = loadAnimation("Images/vehicle/FireMissile.png","Images/vehicle/ShootCannon.png");
+    helipadImage = loadImage("background.png");
+    helicopterImage = loadImage("helicopter.gif");
+    helicopterWithLight = loadAnimation("Fly1.png","Fly2.png","Fly3.png","Fly4.png");
+    helicopterWithNoLight = loadAnimation("Fly5.png","Fly6.png","Fly7.png","Fly8.png");
+    helicopterStill = loadAnimation("Fly1.png");
+    helicopterShoot = loadAnimation("FireMissile.png","ShootCannon.png");
 
-    cave1Image = loadAnimation("Images/Basement/Cave1.png");
-    cave2Image = loadAnimation("Images/Basement/Cave2.png");
+    cave1Image = loadAnimation("Cave1.png");
+    cave2Image = loadAnimation("Cave2.png");
 
-    basement1Image = loadAnimation("Images/Basement/Basement1.jpg");
-    basement2Image = loadAnimation("Images/Basement/Basement2.jpg");
-    basement3Image = loadAnimation("Images/Basement/Basement3.jpg");
-    basement4Image = loadAnimation("Images/Basement/Basement4.jpg");
-    basement5Image = loadAnimation("Images/Basement/Basement5.jpg");
+    basement1Image = loadAnimation("Basement1.jpg");
+    basement2Image = loadAnimation("Basement2.jpg");
+    basement3Image = loadAnimation("Basement3.jpg");
+    basement4Image = loadAnimation("Basement4.jpg");
+    basement5Image = loadAnimation("Basement5.jpg");
 
-    missionIntroImage = loadAnimation("Images/Basement/missionBg2.png");
+    missionIntroImage = loadAnimation("missionBg2.png");
 
-    smokeAnimation = loadAnimation("Images/Basement/smoke1.jpg", "Images/Basement/smoke2.jpg","Images/Basement/smoke3.jpg","Images/Basement/smoke4.jpg",
-    "Images/Basement/smoke5.jpg","Images/Basement/smoke6.jpg");
+    smokeAnimation = loadAnimation("smoke1.jpg", "smoke2.jpg","smoke3.jpg","smoke4.jpg",
+    "smoke5.jpg","smoke6.jpg");
 
-    bulletR = loadAnimation("Images/Weapons/bulletR.png");
-    bulletL = loadAnimation("Images/Weapons/bulletL.png");
+    bulletR = loadAnimation("bulletR.png");
+    bulletL = loadAnimation("bulletL.png");
 
-    missileImage = loadAnimation("Images/vehicle/Missile1.png","Images/vehicle/Missile2.png","Images/vehicle/Missile3.png");
+    missileImage = loadAnimation("Missile1.png","Missile2.png","Missile3.png");
 
-    stillBlood = loadAnimation("Images/Character/armydead8.png");
+    stillBlood = loadAnimation("armydead8.png");
 
-    armyBulletSound = createAudio("Sound/as.mp3");
-    terroristBulletSound = createAudio("Sound/ts.mp3");
+    armyBulletSound = createAudio("as.mp3");
+    terroristBulletSound = createAudio("ts.mp3");
 
-    terroristMachineImage = loadAnimation("Images/vehicle/terroristMachine2.png");
+    terroristMachineImage = loadAnimation("terroristMachine2.png");
 
-    TMFireImage = loadAnimation("Images/Weapons/gflame1.png","Images/Weapons/gflame2.png","Images/Weapons/gflame3.png",
-    "Images/Weapons/gflame4.png","Images/Weapons/gflame5.png","Images/Weapons/gflame6.png");
+    TMFireImage = loadAnimation("gflame1.png","gflame2.png","gflame3.png",
+    "gflame4.png","gflame5.png","gflame6.png");
     
-    speakC1 = loadAnimation("Images/Meeting/speak.png");
-    speakR1 = loadAnimation("Images/Meeting/speakingR1.png");
-    mSpeak = loadAnimation("Images/Meeting/speakingC1.png");
+    speakC1 = loadAnimation("speak.png");
+    speakR1 = loadAnimation("speakingR1.png");
+    mSpeak = loadAnimation("speakingC1.png");
 
-    planeImage = loadAnimation("Images/vehicle/plane1.png", "Images/vehicle/plane2.png");
+    planeImage = loadAnimation("plane1.png", "plane2.png");
 
-    TMSound = createAudio("Sound/BIGMACHINE.mp3");
-    TMFBlastSound = createAudio("Sound/BIGMACHINEBLAST.mp3");
-    MachineFall = createAudio("Sound/MachineFalling.mp3");
-    missileSound = createAudio("Sound/missileSound.mp3");
-    HelicopterStart = createAudio("Sound/HelicopterStart.mp3");
-    HelicopterRun = createAudio("Sound/HelicopterRun.mp3");
+    TMSound = createAudio("BIGMACHINE.mp3");
+    TMFBlastSound = createAudio("BIGMACHINEBLAST.mp3");
+    MachineFall = createAudio("MachineFalling.mp3");
+    missileSound = createAudio("missileSound.mp3");
+    HelicopterStart = createAudio("HelicopterStart.mp3");
+    HelicopterRun = createAudio("HelicopterRun.mp3");
 
-    pm1 = createAudio("Sound/Dialogue/PM1.mp3");
-    pm2 = createAudio("Sound/Dialogue/PM2.mp3");
-    armySound = createAudio("Sound/Dialogue/Army.mp3");
-    govind11 = createAudio("Sound/Dialogue/Govind11.mp3");
-    govind12 = createAudio("Sound/Dialogue/Govind12.mp3");
-    govind21 = createAudio("Sound/Dialogue/Govind21.mp3");
-    govind22 = createAudio("Sound/Dialogue/Govind22.mp3");
-    hc11 = createAudio("Sound/Dialogue/HC11.mp3");
-    hc12 = createAudio("Sound/Dialogue/HC12.mp3");
-    hc2 = createAudio("Sound/Dialogue/HC2.mp3");
-    hc3 = createAudio("Sound/Dialogue/HC3.mp3");
-    hc4 = createAudio("Sound/Dialogue/HC4.mp3");
-    hc5 = createAudio("Sound/Dialogue/HC5.mp3");
-    hd1 = createAudio("Sound/Dialogue/HD1.mp3");
-    hd2 = createAudio("Sound/Dialogue/HD2.mp3");
-    hd3 = createAudio("Sound/Dialogue/HD3.mp3");
-    minister = createAudio("Sound/Dialogue/Minister.mp3");
-    someoneIsThere = createAudio("Sound/Dialogue/SomeoneIsThere.mp3");
-    terroristGate = createAudio("Sound/Dialogue/TerroristGate.mp3");
-    notLeave = createAudio("Sound/Dialogue/We'llNotLeave.mp3");
-    shootYou = createAudio("Sound/Dialogue/We'llShootYou.mp3");
-    laugh = createAudio("Sound/Dialogue/laugh.mp3");
-    gateBlast = createAudio("Sound/gateBlast.mp3");
-    bombBlast = createAudio("Sound/bombBlast.mp3");
-    luckyDay = createAudio("Sound/luckyDay.mp3");
-    herioc = createAudio("Sound/Background/herioc.mp3");
-    fallenHero = createAudio("Sound/Background/FallenHero.mp3");
-    trouble = createAudio("Sound/Background/Trouble.mp3");
-    josh1 = createAudio("Sound/Dialogue/howIsJosh1.mp3");
-    josh2 = createAudio("Sound/Dialogue/howIsJosh2.mp3");
-    janaGanaMana = createAudio("Sound/JanaGanaMana.mp3");
-    parliament = createAudio("Sound/Background/parliament.mp3");
-    parliament1 = createAudio("Sound/Background/parliament.mp3");
-    victory1 = createAudio("Sound/Background/victory.mp3");
-    victory2 = createAudio("Sound/Background/victory2.mp3");
-    victory3 = createAudio("Sound/Background/victory.mp3");
-    thankSound = createAudio("Sound/Background/thank.mp3");
-    spikeSound = createAudio("Sound/spikeSound.mp3");
+    pm1 = createAudio("PM1.mp3");
+    pm2 = createAudio("PM2.mp3");
+    armySound = createAudio("Army.mp3");
+    govind11 = createAudio("Govind11.mp3");
+    govind12 = createAudio("Govind12.mp3");
+    govind21 = createAudio("Govind21.mp3");
+    govind22 = createAudio("Govind22.mp3");
+    hc11 = createAudio("HC11.mp3");
+    hc12 = createAudio("HC12.mp3");
+    hc2 = createAudio("HC2.mp3");
+    hc3 = createAudio("HC3.mp3");
+    hc4 = createAudio("HC4.mp3");
+    hc5 = createAudio("HC5.mp3");
+    hd1 = createAudio("HD1.mp3");
+    hd2 = createAudio("HD2.mp3");
+    hd3 = createAudio("HD3.mp3");
+    minister = createAudio("Minister.mp3");
+    someoneIsThere = createAudio("SomeoneIsThere.mp3");
+    terroristGate = createAudio("TerroristGate.mp3");
+    notLeave = createAudio("We'llNotLeave.mp3");
+    shootYou = createAudio("We'llShootYou.mp3");
+    laugh = createAudio("laugh.mp3");
+    gateBlast = createAudio("gateBlast.mp3");
+    bombBlast = createAudio("bombBlast.mp3");
+    luckyDay = createAudio("luckyDay.mp3");
+    herioc = createAudio("herioc.mp3");
+    fallenHero = createAudio("FallenHero.mp3");
+    trouble = createAudio("Trouble.mp3");
+    josh1 = createAudio("howIsJosh1.mp3");
+    josh2 = createAudio("howIsJosh2.mp3");
+    janaGanaMana = createAudio("JanaGanaMana.mp3");
+    parliament = createAudio("parliament.mp3");
+    parliament1 = createAudio("parliament.mp3");
+    victory1 = createAudio("victory.mp3");
+    victory2 = createAudio("victory2.mp3");
+    victory3 = createAudio("victory.mp3");
+    thankSound = createAudio("thank.mp3");
+    spikeSound = createAudio("spikeSound.mp3");
 
-    crateImage = loadImage("Images/Basement/Crate.png");
-    TCImage = loadAnimation("Images/Character/TC3.png","Images/Character/TC4.png");
-    TC1Image = loadAnimation("Images/Character/TC1.png");
+    crateImage = loadImage("Crate.png");
+    TCImage = loadAnimation("TC3.png","TC4.png");
+    TC1Image = loadAnimation("TC1.png");
 
-    health0 = loadAnimation("Images/Health/armyHealth/health0.png");
-    health1 = loadAnimation("Images/Health/armyHealth/health1.png");
-    health2 = loadAnimation("Images/Health/armyHealth/health2.png");
-    health3 = loadAnimation("Images/Health/armyHealth/health3.png");
-    health4 = loadAnimation("Images/Health/armyHealth/health4.png");
-    health5 = loadAnimation("Images/Health/armyHealth/health5.png");
-    health6 = loadAnimation("Images/Health/armyHealth/health6.png");
-    health7 = loadAnimation("Images/Health/armyHealth/health7.png");
-    health8 = loadAnimation("Images/Health/armyHealth/health8.png");
-    health9 = loadAnimation("Images/Health/armyHealth/health9.png");
-    health10 = loadAnimation("Images/Health/armyHealth/health10.png");
-    health11 = loadAnimation("Images/Health/armyHealth/health11.png");
-    health12 = loadAnimation("Images/Health/armyHealth/health12.png");
-    health13 = loadAnimation("Images/Health/armyHealth/health13.png");
-    health14 = loadAnimation("Images/Health/armyHealth/health14.png");
-    health15 = loadAnimation("Images/Health/armyHealth/health15.png");
+    health0 = loadAnimation("health0.png");
+    health1 = loadAnimation("health1.png");
+    health2 = loadAnimation("health2.png");
+    health3 = loadAnimation("health3.png");
+    health4 = loadAnimation("health4.png");
+    health5 = loadAnimation("health5.png");
+    health6 = loadAnimation("health6.png");
+    health7 = loadAnimation("health7.png");
+    health8 = loadAnimation("health8.png");
+    health9 = loadAnimation("health9.png");
+    health10 = loadAnimation("health10.png");
+    health11 = loadAnimation("health11.png");
+    health12 = loadAnimation("health12.png");
+    health13 = loadAnimation("health13.png");
+    health14 = loadAnimation("health14.png");
+    health15 = loadAnimation("health15.png");
 
-    Thealth0 = loadAnimation("Images/Health/enemyHealth/health_0.png");
-    Thealth1 = loadAnimation("Images/Health/enemyHealth/health_1.png");
-    Thealth2 = loadAnimation("Images/Health/enemyHealth/health_2.png");
-    Thealth3 = loadAnimation("Images/Health/enemyHealth/health_3.png");
-    Thealth4 = loadAnimation("Images/Health/enemyHealth/health_4.png");
-    Thealth5 = loadAnimation("Images/Health/enemyHealth/health_5.png");
-    Thealth6 = loadAnimation("Images/Health/enemyHealth/health_6.png");
-    Thealth7 = loadAnimation("Images/Health/enemyHealth/health_7.png");
-    Thealth8 = loadAnimation("Images/Health/enemyHealth/health_8.png");
-    Thealth9 = loadAnimation("Images/Health/enemyHealth/health_9.png");
-    Thealth10 = loadAnimation("Images/Health/enemyHealth/health_10.png");
-    Thealth11 = loadAnimation("Images/Health/enemyHealth/health_11.png");
-    Thealth12 = loadAnimation("Images/Health/enemyHealth/health_12.png");
-    Thealth13 = loadAnimation("Images/Health/enemyHealth/health_13.png");
-    Thealth14 = loadAnimation("Images/Health/enemyHealth/health_14.png");
-    Thealth15 = loadAnimation("Images/Health/enemyHealth/health_15.png");
-    Thealth16 = loadAnimation("Images/Health/enemyHealth/health_16.png");
-    Thealth17 = loadAnimation("Images/Health/enemyHealth/health_17.png");
-    Thealth18 = loadAnimation("Images/Health/enemyHealth/health_18.png");
-    Thealth19 = loadAnimation("Images/Health/enemyHealth/health_19.png");
-    Thealth20 = loadAnimation("Images/Health/enemyHealth/health_20.png");
+    Thealth0 = loadAnimation("health_0.png");
+    Thealth1 = loadAnimation("health_1.png");
+    Thealth2 = loadAnimation("health_2.png");
+    Thealth3 = loadAnimation("health_3.png");
+    Thealth4 = loadAnimation("health_4.png");
+    Thealth5 = loadAnimation("health_5.png");
+    Thealth6 = loadAnimation("health_6.png");
+    Thealth7 = loadAnimation("health_7.png");
+    Thealth8 = loadAnimation("health_8.png");
+    Thealth9 = loadAnimation("health_9.png");
+    Thealth10 = loadAnimation("health_10.png");
+    Thealth11 = loadAnimation("health_11.png");
+    Thealth12 = loadAnimation("health_12.png");
+    Thealth13 = loadAnimation("health_13.png");
+    Thealth14 = loadAnimation("health_14.png");
+    Thealth15 = loadAnimation("health_15.png");
+    Thealth16 = loadAnimation("health_16.png");
+    Thealth17 = loadAnimation("health_17.png");
+    Thealth18 = loadAnimation("health_18.png");
+    Thealth19 = loadAnimation("health_19.png");
+    Thealth20 = loadAnimation("health_20.png");
 
-    spikeImage = loadImage("Images/Weapons/spike.png");
-    spikeBImage = loadImage("Images/Weapons/spikeBall.png");
+    spikeImage = loadImage("spike.png");
+    spikeBImage = loadImage("spikeBall.png");
 
-    LAImage = loadAnimation("Images/Character/lastArmy.png");
+    LAImage = loadAnimation("lastArmy.png");
     
-    truckImage = loadAnimation("Images/vehicle/Truck.png");
+    truckImage = loadAnimation("Truck.png");
 
-    FBImage = loadAnimation("Images/Map/FB.png");
-    flagImage  = loadAnimation("Images/flag.png");
+    FBImage = loadAnimation("FB.png");
+    flagImage  = loadAnimation("flag.png");
 
-    AS1Image = loadImage("Images/Character/AS1.png");
-    AS2Image = loadImage("Images/Character/AS2.png");
-    AS3Image = loadImage("Images/Character/AS3.png");
-    AS4Image = loadImage("Images/Character/AS4.png");
-    AS5Image = loadImage("Images/Character/AS5.png");
+    AS1Image = loadImage("AS1.png");
+    AS2Image = loadImage("AS2.png");
+    AS3Image = loadImage("AS3.png");
+    AS4Image = loadImage("AS4.png");
+    AS5Image = loadImage("AS5.png");
 
-    thankYou = createVideo(["Video/thank1.mp4"]);
+    thankYou = createVideo(["thank1.mp4"]);
     thankYou.hide();
 
-    thankImage = loadImage("Video/thank1.jpg");
+    thankImage = loadImage("thank1.jpg");
 
-    gameOver = loadImage("Images/gameOver.gif");
+    gameOver = loadImage("gameOver.gif");
 
-    instructionImage = loadImage("Images/Meeting/Instructions.png");
+    instructionImage = loadImage("Instructions.png");
 
 }
 function setup(){
